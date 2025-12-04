@@ -1,3 +1,5 @@
 const sum = arr => eval(arr.join('+'));
 
-export default {sum}
+const avg = arr => sum(arr) / arr.length
+
+export default {sum, avg}

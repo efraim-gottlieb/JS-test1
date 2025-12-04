@@ -19,4 +19,4 @@ const showStats = (player) => {
   console.log(`total time: ${totalTime}\naverage riddle time: ${avgRiddleTime}`)
 }
 
-export default {createPlayer, addSolveTime};
+export default {createPlayer, addSolveTime, showStats};

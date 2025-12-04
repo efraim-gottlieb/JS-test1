@@ -1,6 +1,7 @@
-Efraim Gottlieb
-326080025
-Golan
+# Personal details
+  Efraim Gottlieb
+  326080025
+  Golan
 
 # description of the project
   First I divided the entities

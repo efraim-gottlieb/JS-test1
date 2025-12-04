@@ -1,4 +1,4 @@
-import mathTools from '../utils/math_tools.js'
+import mathTools from './mathTools.js'
 
 
 const createPlayer = (name) => {
@@ -13,10 +13,10 @@ const addSolveTime = (player, seconds) => {
 }
 
 const showStats = (player) => {
-  const totalTime = mathTools.sun(player.times)
+  const totalTime = mathTools.sum(player.times)
   const avgRiddleTime = mathTools.avg(player.times)
 
-  console.log(`total time: ${totalTime}\naverage riddle time: ${avgRiddleTime}`)
+  console.log(`total time: ${totalTime} seconds\naverage riddle time: ${avgRiddleTime} seconds`)
 }
 
 export default {createPlayer, addSolveTime, showStats};

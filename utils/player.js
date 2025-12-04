@@ -5,4 +5,9 @@ const createPlayer = (name) => {
   }
 }
 
-export default createPlayer;
+const addSolveTime = (player, seconds) => {
+  player.times.push(seconds)
+}
+
+
+export default {createPlayer, addSolveTime};

@@ -1,6 +1,5 @@
 import input from 'analiza-sync'
 import riddles from '../riddles/riddles.js'
-const enterAnswerPrint = () => {console.log('Enter the answer ')}
 
 const askMultipleChoiceRiddle = (riddleObj) => {
   console.log('\noptions:\n')
@@ -11,17 +10,23 @@ const askMultipleChoiceRiddle = (riddleObj) => {
   })
   let answer = input('Enter the answer ')
   while(answer -1 != riddleObj.correctAnswer) {
+    console.log('Wrong answer, try again.')
     answer = input('Enter the answer ')
   }
   console.log('beautiful')
 }
 
 const askRegularRiddle = (riddleObj) => {
-  
+  let answer = input('Enter the answer ')
+  while (answer != riddleObj.correctAnswer) {
+    console.log('Wrong answer, try again.')
+    answer = input('Enter the answer ')
+  }
+  console.log('beautiful')
 }
 
 const askRiddle = (riddleObj) => {
-  console.log(riddleObj.name)
+  console.log('\n______'+ riddleObj.name +'______')
   console.log(`riddle type: ${riddleObj.riddleType}`)
   console.log(riddleObj.taskDescription)
 
@@ -32,5 +37,5 @@ const askRiddle = (riddleObj) => {
     askRegularRiddle(riddleObj)
   }
 }
-// askRiddle(riddles[0])
-askRiddle(riddles[1])
+askRiddle(riddles[0])
+// askRiddle(riddles[1])

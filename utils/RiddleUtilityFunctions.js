@@ -1,5 +1,4 @@
 import input from 'analiza-sync'
-// import riddles from '../riddles/riddles.js'
 
 const askMultipleChoiceRiddle = (riddleObj) => {
   console.log('\noptions:\n')
@@ -38,10 +37,12 @@ const askRiddle = (riddleObj) => {
   }
 }
 
-const measureSolveTime = (fn) => {
+const measureSolveTime = (fn, arg) => {
   const start = new Date()
-  fn()
+  fn(arg)
   const end = new Date()
   let seconds = Math.abs(start.getTime() - end.getTime())/1000
   return seconds
 }
+
+export default {askRiddle, measureSolveTime}

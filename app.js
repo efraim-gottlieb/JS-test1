@@ -1,13 +1,16 @@
 import riddles from './riddles/riddles.js';
-import player from './utils/player.js';
-import mathTools from './utils/mathTools.js'
+import playerTools from './utils/player.js';
 import input from 'analiza-sync';
+import game from './utils/RiddleUtilityFunctions.js'
 
+console.log('------ Welcomt to the riddle game ------')
+const playerName = input('Enter your name ')
+let player = playerTools.createPlayer(playerName)
 
-let a= player.createPlayer('efraim')
-player.addSolveTime(a, 8)
-player.addSolveTime(a, 5)
-// console.log(riddles)
+riddles.forEach((riddle) => {
+  let roundSeconds = game.measureSolveTime(game.askRiddle,riddle)
+  playerTools.addSolveTime(player, roundSeconds)
+})
 
-
-player.showStats(a)
+console.log('\n==== Game Over ====')
+playerTools.showStats(player)
